@@ -5,62 +5,42 @@ const leftImg = document.querySelector("#left-img");
 const middleImg = document.querySelector("#middle-img");
 const rightImg = document.querySelector("#right-img");
 
-// leftBtn.addEventListener("mousedown",() =>{
-// leftImg.style.display ="inline"
-
-// })
-// leftBtn.addEventListener("mouseup",() =>{
-//     leftImg.style.display ="none"
-
-//     })
-
-function onclick(btn, img) {
+function onclick(btn, img, audio) {
   btn.addEventListener("mousedown", () => {
     img.style.display = "inline";
+    audio.play();
   });
   btn.addEventListener("mouseup", () => {
     img.style.display = "none";
+    audio.load();
   });
 }
-function playAudio(x) {
-    x.play();
-}
+onclick(leftBtn, leftImg, bamboleo);
+onclick(middleBtn, middleImg, mj);
+onclick(rightBtn, rightImg, ymca);
 
-function pauseAudio(x) {
-    x.load();
-}
+document.addEventListener("keydown", (event) => {
+  if (event.key == "b") {
+    leftImg.style.display = "inline";
+    bamboleo.play();
+  } else if (event.key == "m") {
+    middleImg.style.display = "inline";
+    mj.play();
+  } else if (event.key == "y") {
+    rightImg.style.display = "inline";
+    ymca.play();
+  }
+});
 
-
-onclick(leftBtn, leftImg);
-onclick(middleBtn, middleImg);
-onclick(rightBtn, rightImg);
-
-document.addEventListener('keydown',(event) =>{
-    if(event.key == "b"){
-        leftImg.style.display = "inline";
-        playAudio(bamboleo)
-    }
-    else if(event.key == "m"){
-        middleImg.style.display = "inline";
-        playAudio(mj)
-    }
-    else if(event.key == "y"){
-        rightImg.style.display = "inline";
-        playAudio(ymca)
-    }
-})
-
-document.addEventListener('keyup',(event) =>{
-    if(event.key == "b"){
-        leftImg.style.display = "none";
-        pauseAudio(bamboleo)
-    }
-    else if(event.key == "m"){
-        middleImg.style.display = "none";
-        pauseAudio(mj)
-    }
-    else if(event.key == "y"){
-        rightImg.style.display = "none";
-        pauseAudio(ymca)
-    }
-})
+document.addEventListener("keyup", (event) => {
+  if (event.key == "b") {
+    leftImg.style.display = "none";
+    bamboleo.load();
+  } else if (event.key == "m") {
+    middleImg.style.display = "none";
+    mj.load();
+  } else if (event.key == "y") {
+    rightImg.style.display = "none";
+    ymca.load();
+  }
+});
