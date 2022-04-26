@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="bamboleo">
+        <source src="./bamboleo.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="mj">
+        <source src="./billie-jean.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="ymca">
+        <source src="./ymca-village-people-ringtone.mp3" type="audio/mpeg">
+      </audio>
+    <div class="container">
+        <img  id="left-img" src="./mr-bean-walk.gif" alt="walk">
+        <img id="middle-img" src="./mr-bean-dancing.gif" alt="dancing">
+        <img id="right-img" src="./mr-bean.gif" alt="mr">
+
+    <button onmousedown="playAudio(bamboleo)" onmouseup="pauseAudio(bamboleo)" type="button" id="left-btn">Click and hold or press B<p class="small"></p></button>
+    
+    <button onmousedown="playAudio(mj)" onmouseup="pauseAudio(mj)" type="text" id="middle-btn">Click and hold or press M</button>
+    
+    <button onmousedown="playAudio(ymca)" onmouseup="pauseAudio(ymca)" type="text" id="right-btn">Click and hold or press Y</button>
+    
+</div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>
